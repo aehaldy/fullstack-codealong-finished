@@ -2,9 +2,9 @@ const router = require('express').Router();
 
 
 router.get('/', (req, res) => {
-  temp_auth_test = true; // Auth will replace this
+  authorized = false; // Auth will replace this test boolean
 
-  if (!temp_auth_test) {
+  if (!authorized) {
     res.redirect('/login');
     return;
   }
