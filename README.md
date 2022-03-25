@@ -2,18 +2,18 @@
 
 ## Create Front End Login Template
 1. `npm i handlebars`
-2. Navigate to `views/main.hbs` and notice that the handlebars injection `{{{body}}}` is there, but not much else. 
-3. Create a new view called `login.hbs`
+2. Navigate to `views/layouts/main.handlebars` and notice that the handlebars injection `{{{body}}}` is there, but not much else. 
+3. Create a new file in the `view` diretory called `login.handlebars`
 4. Add html forms controlled through a tabbing feature to toggle between login and sign up. 
 5. Tabbing is handled using CSS, and of course, JavaScript. (NOTE: A basic CSS stylesheet has been provided)
 
 ## Create the Login/Sign-Up Logic 
 1. Navigate to `public/js/login.js` and add the logic to handle tabbing.
 2. While we're at it, we can add event listeners to the forms and the functions that will capture input.
-3. Import the script into `login.hbs`
+3. Import the script into `login.handlebars`
 
 ## Create the Post-Login View
-1. Create a new handlebars view called `home.hbs`
+1. Create a new handlebars view called `home.handlebars`
 2. Write a basic html template to show that the user has successfully logged in.
 3. Taking advantage of handlebars templating, we'll dynamically show the username.
 
@@ -31,20 +31,22 @@
 const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({ helpers });
-
 app.engine('handlebars', hbs.engine);
-app.set('view engine', 'hbs');
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(routes);
+
 app.listen(PORT, () => console.log(`Rarin' ta go on http://localhost:${PORT}`));
+
 ```
 3. NOTE, we will be adding Sequelize and Sessions as we build out the app. For now, we are simply getting up and running with Handlebars.
 
