@@ -17,6 +17,12 @@ body {font-family: arial,sans-serif;}
 .p2 {padding: 3em;}
 .p3 {padding: 3em;}
 
+/* padding-top */
+.p1-top {padding-top: 1em;}
+.p2-top {padding-top: 3em;}
+.p3-top {padding-top: 3em;}
+.p4-top {padding-top: 4em;}
+
 /* flex container */
 .flex {
   display: flex;
