@@ -9,7 +9,7 @@
 
 ## Create the Login/Sign-Up Logic 
 1. Navigate to `public/js/login.js` and add the logic to handle tabbing.
-2. While we're at it, we can add event listeners to the forms and the functions that will capture input.
+2. While we're at it, we can add event listeners to the forms, as well as the functions that will capture input and send POST requests.
 3. Import the script into `login.handlebars`
 
 ## Create the Post-Login View
@@ -64,7 +64,7 @@ app.use(routes);
 ```
 
 ### We can now run `npm start` to test our application!
-Normally styling would be done after getting the main componenets created and functional, but to save time for this code-along, we've already applied styles.
+Normally, styling would be done after getting the main components created and functional, but to save time for this code-along, we've already applied styles.
 
 &nbsp;
 
