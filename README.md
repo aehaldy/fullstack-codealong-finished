@@ -65,5 +65,13 @@ const routes = require('./controllers');
 app.use(routes);
 ```
 
+### We can now run `npm start` to test our application!
+Normally styling would be done after getting the main componenets created and functional, but to save time for this code-along, we've already applied styles.
+
+&nbsp;
+
+## Create the User Model
+1. We need to be able to reliably retrieve the data of users who have signed up, so we need to store them in our database.
+
 ## Create the Sign-Up Route
 1. We need a path to start adding users to our database. 
