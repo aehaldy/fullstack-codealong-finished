@@ -17,8 +17,15 @@
 2. Write a basic html template to show that the user has successfully logged in.
 3. Taking advantage of handlebars templating, we'll dynamically show the username.
 
-### The Controller (Express with Handlebars) will control which of these views users receive, based on session authentication.  
+## Create the User Model
+1. We need to be able to reliably retrieve the data of users who have signed up, so we need to store them in our database.
+2. Users will have a username, email, and password. Remember to leverage bcrypt to hash user passwords and create a utility function on the `User` class which will check the user's password.
+3. To the `hooks` object on the Sequelize instance for `User`, add our bcrypt hashing.
 
+### The Controller (Express with Handlebars) will control which of these views users receive, based on session authentication.  
+1. In the `controllers` folder, create an `index.js` and `home-routes.js` file. Also create a subfolder called `api`. The `api` subfolder will contain our `user-routes` and an `index.js` file as well.
+2. Import the API and home-routes using `express.Router()`.
+3. Set up basic API routing. In `user-routes.js`, create two post routes (one for creating a user and one for logging out).
 &nbsp;
 
 ## Create the Server:
@@ -67,9 +74,3 @@ app.use(routes);
 Normally, styling would be done after getting the main components created and functional, but to save time for this code-along, we've already applied styles.
 
 &nbsp;
-
-## Create the User Model
-1. We need to be able to reliably retrieve the data of users who have signed up, so we need to store them in our database.
-
-## Create the Sign-Up Route
-1. We need a path to start adding users to our database. 
