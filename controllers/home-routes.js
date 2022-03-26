@@ -1,18 +1,15 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
-
-router.get('/', (req, res) => {
-  authorized = false; // Auth will replace this test boolean
-
-  if (!authorized) {
-    res.redirect('/login');
-    return;
-  }
-
-  res.render('home');
+router.get('/', withAuth, (req, res) => {
+  res.render('home', { user: req.session.user });
 });
 
 router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
   res.render('login');
 });
 
